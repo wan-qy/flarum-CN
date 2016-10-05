@@ -31,7 +31,6 @@ RUN echo "@commuedge https://nl.alpinelinux.org/alpine/edge/community" >> /etc/a
  && curl -s http://getcomposer.org/installer | php \
  && mv /tmp/composer.phar /usr/bin/composer \
  && chmod +x /usr/bin/composer \
- && php composer.phar config -g repo.packagist composer https://packagist.phpcomposer.com \ #Source
  && mkdir -p /flarum/app \
  && chown -R $UID:$GID /flarum \
  && su-exec $UID:$GID composer create-project flarum/flarum /flarum/app $VERSION --stability=beta \
