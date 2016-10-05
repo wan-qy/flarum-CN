@@ -1,6 +1,7 @@
 FROM alpine:3.4
 MAINTAINER xataz <https://github.com/xataz>
 MAINTAINER hardware <https://github.com/hardware>
+MAINTAINER slanterns <slanterns.w@gmail.com>
 
 ARG VERSION=v0.1.0-beta.5
 
@@ -43,6 +44,9 @@ COPY opcache.ini /etc/php7/conf.d/00_opcache.ini
 COPY composer /usr/local/bin/composeur
 COPY s6.d /etc/s6.d
 COPY run.sh /usr/local/bin/run.sh
+
+#ADD Chinese support
+ADD zh-CN.tar.xz /flarum/app/extensions/
 
 RUN chmod +x /usr/local/bin/* /etc/s6.d/*/* /etc/s6.d/.s6-svscan/*
 
